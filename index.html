@@ -1,1 +1,497 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- SEO -->
+    <title>ML Projects</title>
+    <meta
+      name="description"
+      content="Portfolio for world-renowned software
+    engineer Ellie"
+    />
+    <meta name="author" content="Ellie" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <!-- OG (Open Graph Data) -->
+    <meta property="og:title" content="엘리의 포트폴리오" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://dream-ellie.github.io/portfolio/"
+    />
+    <meta
+      property="og:image"
+      content="https://dream-ellie.github.io/portfolio/images/og.webp"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/9eb162ac0d.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Typeit -->
+    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Javascript -->
+    <script type="module" src="src/main.js" defer></script>
+    <script type="module" src="src/projects.js" defer></script>
+    <script type="module" src="src/active_menu.js" defer></script>
+    <script type="module" src="src/type.js" defer></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <!-- <div class="header__logo">
+        <img class="header__logo__img" src="images/favicon.ico" alt="logo" />
+        <h1 class="header__logo__title"><a href="#">CSCI 5622</a></h1>
+      </div> -->
+      <nav class="header__nav">
+        <ul class="header__menu">
+          <li><a class="header__menu__item active" href="#home">Introduction</a></li>
+          <li><a class="header__menu__item" href="#about">DataPrep/EDA</a></li>
+          <li><a class="header__menu__item" href="#skills">Linear Regression model</a>
+            <ul>
+              <li><a class="header__menu__item" href="#Overview">Overview</a></li>
+              <li><a class="header__menu__item" href="#Data">Data</a></li>
+              <li><a class="header__menu__item" href="#Code">Code</a></li>
+              <li><a class="header__menu__item" href="#Results">Results</a></li>
+            </ul>
+          </li>
+          <!-- <li><a class="header__menu__item" href="#work">Work</a></li> -->
+          <li>
+            <a class="header__menu__item" href="#testimonial">Conclusion</a>
+          </li>
+          <!-- <li><a class="header__menu__item" href="#contact">Contact</a></li> -->
+        </ul>
+      </nav>
+      <button class="header__toggle" aria-label="navigation menu toggle">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </header>
+    <!-- Main -->
+    <main>
+      <!-- Introduction -->
+      <section id="home">
+        <div class="section max-container left-align">
+          <h2 class="title">Introduction</h2>
+          <p class="home__description">
+            The latest United Nations report, as of 2018, reveals that over half of the global population resided in urban areas, a
+            figure projected to soar to 68% by 2050. With urbanization on the rise, cities are confronting fresh challenges that
+            demand innovative solutions across housing, infrastructure, services, and transportation. Adapting to evolving mobility
+            needs mandates cost-effective, eco-friendly, and reliable transport methods to facilitate seamless movement of people
+            and goods, thereby addressing issues like traffic congestion, air pollution, and lengthy commutes.
+          </p><br>
+          <p class="home__description">
+            Seoul Bicycle Sharing is a public bike-sharing initiative available in Seoul, South Korea, engineered to offer
+            convenient and eco-friendly transportation options for residents and visitors alike. The performance of Seoul Bicycle
+            Sharing has been consistently improving year by year. The average daily use surged to 87,817, marking a six-fold
+            increase from 2017 (13,783 cases). The rental cases from January to May 2022 totaled 14.14 million, indicating a 38.3%
+            increase compared to the same period last year.
+          </p><br>
+          <h2 class="title">Topic explanation</h2>
+          <p class="home__description">   
+            Despite its growing popularity, concerns over the mounting deficit have surfaced. The deficit, which stood at 9 billion
+            won in 2019, increased to 9.9 billion won in 2020 and 10.3 billion won last year. The annual deficit of Seoul Bicycle
+            Sharing has been steadily rising since 2016, reaching 2.5 billion won. Behind the project's acclaim, such as the Seoul
+            Metropolitan Government's announcement to inject 3,000 more bicycles this year, the chronic deficit remains unresolved.
+          </p><br>
+          <p class="home__description">
+            Machine learning technology can play a pivotal role in optimizing operations, enhancing user experience, and ensuring
+            the long-term sustainability of Seoul Bicycle Sharing and similar bike-sharing programs. Firstly, by analyzing
+            historical usage data, machine learning algorithms can forecast bicycle demand at different times and locations across
+            the city, facilitating optimal bike distribution to meet demand. Secondly, machine learning algorithms can adjust
+            pricing dynamically based on factors like time of day, weather conditions, and special events, encouraging usage during
+            off-peak hours and less congested areas. This strategy helps balance demand across the system. Lastly, machine learning
+            algorithms can analyze sensor data from bicycles to predict potential mechanical failures or maintenance needs
+            preemptively, minimizing downtime and enhancing overall user satisfaction.
+
+            Answers to the following 12 questions will be obtained through dataset analysis and based on the results, it will help
+            create a more economical and sustainable Seoul shared bicycle business.<br>
+          </p><br>
+          <p class="description">
+          
+          1. At what time of the year do people use Seoul Bicycle Sharing the least?<br>
+          2. What day of the week do people use Seoul Bicycle Sharing the least?<br>
+          3. At what time of day do people use Seoul Bicycle Sharing the most?<br>
+          4. What is the difference in hourly usage between weekdays and weekends?<br>
+          5. Who are the main customers of which shared bike?<br>
+          6. What weather factors influence people to use Seoul Bicycle Sharing?<br>
+          7. Which seasons influence people to use Seoul Bicycle Sharing?<br>
+          8. How much air pollution and fine dust index affect people's use of Seoul Bicycle Sharing?<br>
+          9. The relationship between the use of bicycles according to the season and the number of reported failures?<br>
+          10. Relationship between Shared Bicycle Model and Failure Rate<br> 
+          </p>
+        </div>
+      </section>
+      <!-- DataPrep/EDA -->
+      <section id="about" class="section max-container left-align">
+        <img
+          src="images/DataPrep/SeoulBike.jpeg"
+          alt="data-prep"
+          class="about__img">
+        <h2 class="title">Data Collection</h2>
+        <p class="home__description">
+          The raw dataset, named 'hourly_weather_data.csv', was acquired via <u>the Weather History Data API</u> provided by
+          https://open-meteo.com/. It comprises 187,648 rows and 15 columns, spanning weather observations from January 1, 2010,
+          to December 31, 2019. The Python script used to fetch the .csv file from the API can be found on GitHub alongside other
+          pertinent information. The dataset includes fields such as 'date', 'temperature_2m', 'relative_humidity_2m',
+          'dew_point_2m', 'apparent_temperature', 'precipitation', 'rain', 'snowfall', 'snow_depth', 'pressure_msl',
+          'surface_pressure', 'cloud_cover', 'et0_fao_evapotranspiration', 'vapour_pressure_deficit', and 'wind_speed_10m'. Null
+          data were not in the dataset.
+        </p><br>
+        <div class="center">
+          <img src="images/DataPrep/raw_weather_api_1.png" alt="Your Image">
+        </div>
+        
+        <p class="home__description">
+          The 'Seoul Bicycle Sharing' dataset was initially intended to be sourced from https://data.seoul.go.kr/. However, due to
+          the Lunar New Year holiday season in East Asia, the servers hosting the bike dataset were temporarily suspended.
+          Consequently, an alternative dataset from https://www.kaggle.com/datasets/joebeachcapital/seoul-bike-sharing/data was
+          utilized. This dataset includes various fields such as 'date', 'temperature_2m', 'relative_humidity_2m', 'dew_point_2m',
+          'apparent_temperature', 'precipitation', 'rain', 'snowfall', 'snow_depth', 'pressure_msl', 'surface_pressure',
+          'cloud_cover', 'et0_fao_evapotranspiration', 'vapour_pressure_deficit', and 'wind_speed_10m'. Null data were not in the
+          dataset.
+        </p>
+        <div class="center">
+          <img src="images/DataPrep/SeoulDataSet.png" alt="Your Image">
+        </div>
+
+        <h2 class="title">Data Cleaning</h2>
+        <p class="home__description">
+          1. Encoding if necessary<br>First, 'SeoulBikeData.CSV file was not UTF-8 encoded, which caused issues when trying to read or manipulate it,
+          especially if it contains non-ASCII characters. The encoding process needed for merging with hourly_weather_data.csv
+          file. This code essentially filters and truncates the original bike data to include only the specified columns and the
+          first 8736 rows, then saves this filtered data to a new CSV file for further analysis or processing.
+        </p><br>
+        <div class="center">
+          <img src="images/DataPrep/encoding.png" alt="Your Image">
+        </div>
+        </div>
+        <p class="home__description">
+          2. Remove unnecessary decimal points from data<br>Unnecessary decimal points that only add to the complexity of calculations were rounded off and removed.
+        </p><br>
+        <div class="center">
+          <img src="images/DataPrep/decimal.png" alt="Your Image">
+        </div>
+
+        <p class="home__description">
+          3. Remove unnecessary rows from datasets <br>Data values for dates that do not require comparison, other than between December 1, 2017, and November 29, 2018, were
+          excluded. These dates represent overlapping periods in both datasets. It is possible to merge the two CSV files by
+          reducing the number of rows from 87,648 to 8,736 in the 'hourly_weather_data.csv' dataset.
+        </p><br>
+        <div class="center">
+          <img src="images/DataPrep/row.png" alt="Your Image">
+        </div>
+
+        <p class="home__description">
+          4. Remove redundant or unnecessary columns and merge<br>Unnecessary decimal points that only add to the complexity of
+          calculations were rounded off and removed.
+        </p><br>
+        <div class="center">
+          <img src="images/DataPrep/merge.png" alt="Your Image">
+        </div>
+
+        <p class="home__description">
+          5. identify if there are duplicates<br>Since there may be multiple records for a single day, albeit for different hours, there are no redundant entries present
+          in the dataset.
+        </p><br>
+        <div class="center">
+          <img src="images/DataPrep/dupli.png" alt="Your Image">
+        </div>
+
+      </section>
+      <!-- Linear Regression Model Section -->
+      <section id="skills" class="section">
+        <h2>Linear Regression Model</h2>
+
+        <!-- Overview -->
+        <div id="Overview" class="section max-container left-align">
+          <h2>Overview</h2><br>
+          <p class="home__description">
+            The Linear Regression Model Section for your dataset involves applying a statistical technique to analyze the
+            relationship between one or more independent variables and a dependent variable. In this context, the linear
+            regression model can be used to understand how changes in the independent variables, such as temperature, humidity, etc., affect the
+            dependent variable, such as bike usage. The process typically includes data preprocessing, model training, evaluation,
+            and interpretation of the model coefficients to understand the impact of each independent variable on the dependent
+            variable.
+          </p><br>
+        </div>
+
+        <!-- User Research -->
+        <div id="Data" class="section max-container left-align">
+          <h2>User Research</h2><br>
+          <p class="home__description">
+            This research provides a comprehensive overview of Seoul Bike users and their usage behavior. It covers various aspects
+            such as user demographics, trip characteristics, and satisfaction levels. The findings of this study can help improve
+            the Seoul Bike system and better serve its users.
+          </p><br>
+          <div class="center">
+            <img src="images/Linear/stack_chart.png" alt="Your Image"><br>
+          </div>
+          <p class="home__description">
+            1. Monthly subscriber comparison by age<br>
+            Surprisingly, the proportion of teenagers was not very high. The highest proportion of participants/users/subscribers
+            was in their 20s, followed by those in their 30s, 40s, 50s, 60s, and 70s.          </p><br>
+          <div class="center">
+            <img src="images/Linear/Line_chart.png" alt="Your Image"><br>
+          </div>
+          <p class="home__description">
+            2. Monthly subscriber Growth Rate Over Time<br>
+        Subscriber numbers peaked in March, coinciding with the start of spring. They experienced a steady decline through July,
+        followed by an increase in August. A sharp subscriber drop is evident from November, the onset of winter.          </p><br>
+          <div class="center">
+            <img src="images/Linear/Pie_Chart.png" alt="Your Image"><br>
+          </div>
+          <p class="home__description">
+            3. Male/female ratio of users<br>
+            The gender distribution was nearly equal, with 50.4% men and 49.6% women.          </p><br>
+          <div class="center">
+            <img src="images/Linear/scatter plot.png" alt="Your Image"><br>
+          </div>
+          <p class="home__description">
+            4. Travel Distance and Number of rentals<br>
+            A positive correlation was found between frequent use and increased amount of movement, despite some outliers.          </p><br>
+          <div class="center">
+            <img src="images/Linear/box_plot.png" alt="Your Image"><br>
+          </div>
+          <p class="home__description">
+            5. Hours of use by age<br>
+            Generally, younger users (excluding teenagers) tended to use the bikes for longer periods, although there were a number
+            of outliers.         
+            </p><br>
+
+        <!-- Data -->
+        <div id="Data" class="section max-container left-align">
+          <h2>Data preprocessing/visualization</h2><br>
+          <p class="home__description">
+            Time: The bicycle rental count was investigated based on temporal reference points such as the year, week, and time of
+            day. Additionally, the number of bike rentals during weekday and weekend hours was compared.
+          </p><br>
+          <div class="center">
+            <img src="images/Linear/Year.png" alt="Your Image"><br>
+          </div>
+          <p class="home__description">
+            1. At what time of the year do people use Seoul Bicycle Sharing the least?<br>The number of bicycle rentals directly affects revenue. Understanding when the highest and lowest revenue occurs
+            throughout the year is crucial for business management. In Seoul, the period between December and February, the coldest
+            months, sees the fewest bicycle rentals. Following this, during August, the hottest month in Seoul, rental numbers are
+            also low. From this graph, it can be inferred that temperature significantly influences bicycle rental volume.
+          </p><br>
+
+        <div class="center">
+          <img src="images/Linear/Week.png" alt="Your Image"><br>
+        </div>
+          <p class="home__description">
+            2. What day of the week do people use Seoul Bicycle Sharing the least?<br>There was no significant difference in rental volume between weekends and weekdays. From this graph, it can be inferred
+            that shared bikes in Seoul are utilized as an essential means of transportation by users every day.
+          </p><br>
+
+        <div class="center">
+          <img src="images/Linear/dayhour.png" alt="Your Image"><br>
+        </div>
+        <p class="home__description">
+          3. At what time of day do people use Seoul Bicycle Sharing the most?<br>Usage is high during commuting hours. Additionally, there is a tendency for usage to increase in the evening when
+          temperatures drop.
+        </p><br>
+
+        <div class="center">
+          <img src="images/Linear/compareWeekend.png" alt="Your Image"><br>
+        </div>
+        <p class="home__description">
+          4. What is the difference in hourly usage between weekdays and weekends?<br>On weekends, there isn't a sudden increase in usage compared to weekdays. Additionally, usage is evenly distributed
+          overall.
+        </p><br>
+
+        <div class="center">
+          <img src="images/Linear/temp1.png" alt="Your Image"><br>
+        </div>
+        <p class="home__description">
+          5. What weather factors influence people to use Seoul Bicycle Sharing? (temperature)<br>The inference suggests that temperature notably impacts the volume of bicycle rentals, with people opting for Seoul
+          Bicycles particularly when the temperature is moderate. Cold temperatures seem to have a stronger effect on ride counts
+          compared to hot temperatures.
+        </p><br>
+ 
+
+        <div class="center">
+          <img src="images/Linear/temp2.png" alt="Your Image"><br>
+        </div>
+        <div class="center">
+          <img src="images/Linear/humid.png" alt="Your Image"><br>
+        </div><br>
+        <p class="home__description">
+          6. What weather factors influence people to use Seoul Bicycle Sharing? (humidity)<br>Despite the tendency for people to avoid physical activity when humidity levels rise due to an increase in discomfort,
+          it can be observed that bicycle usage actually increases with higher humidity. Further investigation is needed to
+          determine if this correlation holds true in different years.
+        </p><br>
+        <div class="center">
+          <img src="images/Linear/humid2.png" alt="Your Image"><br>
+        </div><br>
+
+        <p class="home__description">
+          7. What weather factors influence people to use Seoul Bicycle Sharing? (precipitation)<br>The graph and value counts reveal a strong correlation between precipitation and bicycle usage. When the precipitation
+          index is 0, bicycle usage is significantly higher.
+        </p><br>
+
+        <div class="center">
+          <img src="images/Linear/preciptation.png" alt="Your Image"><br>
+        </div><br>
+
+
+        <p class="home__description">
+          8. What weather factors influence people to use Seoul Bicycle Sharing? (cloud)
+          On days with no clouds, the bicycle rental rate was high. However, even on cloudy days, the rental rate was relatively
+          higher compared to other times.
+
+        </p><br>
+        
+        <div class="center">
+          <img src="images/Linear/cloud.png" alt="Your Image"><br>
+        </div><br>
+
+        <p class="home__description">
+          9. What weather factors influence people to use Seoul Bicycle Sharing? (precipitation)<br>Temperature and humidity are seen to have a significant influence on people's decision to use bicycles, whereas factors
+          such as air pressure and wind speed appear to be less critical. However, visibility has been identified as an important
+          weather factor for bicycle rentals.
+        </p><br>
+        
+        <div class="center">
+          <img src="images/Linear/windspeed.png" alt="Your Image"><br>
+        </div><br>
+        <p class="home__description">
+          10. Which weather condition shows the strongest correlation with bike rental count?<br>The graph and value counts
+          reveal a strong correlation between precipitation and bicycle usage. When the precipitation
+          index is 0, bicycle usage is significantly higher.
+        </p><br>
+        
+        <div class="center">
+          <img src="images/Linear/correlation.png" alt="Your Image"><br>
+        </div><br>
+
+
+
+          <div class="center">
+            <p>Links to the data:</p>
+            <ul>
+              <li><a href="https://open-meteo.com/en/docs/historical-weather-api">Raw Weather Data</a></li>
+              <li><a href="https://www.kaggle.com/datasets/joebeachcapital/seoul-bike-sharing">Raw Seoul Bike Data</a></li>
+            </ul>
+        </div>
+
+        <!-- Code -->
+        <div id="Code" class="section max-container left-align">
+          <h2>Code</h2>
+          <p class="home__description">
+            The code related to the linear regression model/method is written in Python and utilizes core packages such as pandas,
+            NumPy, and scikit-learn.oading the dataset: Using pandas to read the dataset from a file (e.g., CSV) into a DataFrame.
+            Preprocessing the data: Handling missing values, encoding categorical variables, and splitting the data into training
+            and testing sets.
+            Creating and training the model: Using scikit-learn to instantiate a linear regression model and fit it to the training
+            data.
+            Evaluating the model: Assessing the model's performance on the testing data, typically using metrics like mean squared
+            error or R-squared.
+            Predicting outcomes: Utilizing the trained model to make predictions on new or unseen data.
+          </p>
+        </div>
+
+        <!-- Results -->
+        <div id="Results" class="section max-container left-align">
+          <h2>Results</h2>
+          <p class="home__description">
+            In a linear regression model, variables like temperature and humidity can be used as independent variables that are
+            related to the dependent variable (bike rental counts). These variables are associated with weather conditions and can
+            potentially influence bike rental demand. using such weather variables as independent variables in the model can help predict bike rental counts. However,
+            depending on the dataset, other independent variables may also be useful, and selecting the appropriate variables based
+            on the analysis goals and domain is crucial.
+          </p>
+        </div>
+      </section>
+      <div class="section max-container left-align">
+        <h2 class="title">Conclusion</h2>
+      <section id="testimonial" class="section max-container left-align">
+          Through our analysis of the Seoul Bike sharing dataset alongside weather factors, we've uncovered several significant
+          insights that shed light on the dynamics of bike sharing in Seoul and its relationship with weather conditions.<br>
+
+        
+          Firstly, we observed a clear correlation between weather patterns and bike rental demand. Days with clear skies and mild
+          temperatures tended to see higher bike rental activity, while extreme weather conditions such as heavy rain or strong
+          winds correlated with decreased usage. This finding emphasizes the impact of weather on people's willingness and ability
+          to engage in outdoor activities like biking.</p><br>
+
+          Furthermore, our analysis revealed seasonal variations in bike sharing usage. During the warmer months, demand for bike
+          rentals peaked, aligning with expectations of more favorable weather conditions for outdoor activities. Conversely,
+          colder months saw a decline in usage, suggesting a preference for indoor modes of transportation during inclement
+          weather.</p><br>
+
+          Moreover, we identified specific weather factors that exerted the most influence on bike rental patterns. Variables such
+          as temperature, precipitation, and wind speed emerged as key determinants of rental demand. Understanding the interplay
+          between these weather variables and bike sharing activity is crucial for optimizing bike sharing services and resource
+          allocation based on weather forecasts.</p><br>
+
+
+          Importantly, our analysis highlights the potential for leveraging weather data to enhance bike sharing services in
+          Seoul. By integrating real-time weather information into bike sharing platforms, operators can anticipate fluctuations
+          in demand, optimize bike distribution, and provide users with personalized recommendations based on weather conditions.</p><br>
+
+
+          Lastly, our findings underscore the importance of considering weather factors in urban transportation planning and
+          policy-making. As cities strive to promote sustainable and active modes of transportation like biking, understanding the
+          influence of weather on bike sharing usage is essential for designing resilient and user-centric transportation systems.</p><br>
+
+
+          In conclusion, our analysis demonstrates the significant impact of weather on bike sharing activity in Seoul. By
+          leveraging data insights, stakeholders can make informed decisions to enhance the accessibility, efficiency, and
+          sustainability of bike sharing services, ultimately contributing to a more vibrant and resilient urban environment.</p><br>
+        </section>
+        <div class="center">
+          <img src="images/conclusion/Seoulbike2.png" alt="Your Image"><br>
+        </div><br>
+
+
+        </p>
+      </section>
+      <!-- Arrow up -->
+      <aside>
+        <a class="arrow-up" href="#home" title="back to top">
+          <i class="fa-solid fa-arrow-up"></i>
+        </a>
+      </aside>
+    </main>
+    <!-- Footer -->
+    <footer id="contact" class="section">
+      <div class="max-container">
+        <h2 class="title">Thank You</h2>
+        <p class="description">juki6356@colorado.edu</p>
+        <ul class="contact__links">
+          <!-- <li>
+            <a
+              class="contact__link"
+              href="https://github.com/dream-ellie"
+              target="_blank"
+              title="my github link"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              class="contact__link"
+              href="https://github.com/dream-ellie"
+              target="_blank"
+              title="my linkedin link"
+            >
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          </li>
+        </ul>
+        <p>ⓒDream Coding Ellie - All rights reserved</p> -->
+      </div>
+    </footer>
+  </body>
+</html>
