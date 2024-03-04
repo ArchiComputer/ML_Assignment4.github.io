@@ -667,3 +667,15 @@ button:focus {
 .center {
   text-align: center;
 }
+
+a {
+  /* Selects all links */
+  color: yellow;
+  /* This changes the color of unvisited links */
+}
+
+a:visited {
+  /* Selects visited links */
+  color: yellowgreen;
+  /* This changes the color of visited links */
+}
