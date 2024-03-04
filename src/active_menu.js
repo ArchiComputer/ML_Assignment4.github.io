@@ -8,7 +8,19 @@ const sectionIds = [
   '#Overview',
   '#Data',
   '#Code',
-  '#Results'
+  '#Results',
+  '#clustering',
+  '#clustering_overview',
+  '#clustering_data',
+  '#clustering_code',
+  '#clustering_results',
+  '#clustering_conclusion',
+  '#PCA',
+  '#PCA_overview',
+  '#PCA_data',
+  '#PCA_code',
+  '#PCA_results',
+  '#PCA_conclusion'
 ];
 const sections = sectionIds.map((id) => document.querySelector(id));
 const navItems = sectionIds.map((id) =>
