@@ -32,13 +32,25 @@ const sectionIds = [
   '#Decision_Tree_data',
   '#Decision_Tree_code',
   '#Decision_Tree_results',
-  '#Decision_Tree_conclusion'
+  '#Decision_Tree_conclusion',
   '#SVM',
   '#SVM_overview',
   '#SVM_data',
   '#SVM_code',
   '#SVM_results',
-  '#SVM_conclusion'
+  '#SVM_conclusion',
+  '#Neural Networks',
+  '#Neural Networks_overview',
+  '#Neural Networks_data',
+  '#Neural Networks_code',
+  '#Neural Networks_results',
+  '#Neural Networks_conclusion',
+  '#Regression',
+  '#Regression_overview',
+  '#Regression_data',
+  '#Regression_code',
+  '#Regression_results',
+  '#Regression_conclusion'
 ];
 const sections = sectionIds.map((id) => document.querySelector(id));
 const navItems = sectionIds.map((id) =>

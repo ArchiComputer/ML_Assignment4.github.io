@@ -57,7 +57,7 @@
         <ul class="header__menu">
           <li><a class="header__menu__item active" href="#home">Introduction</a></li>
           <li><a class="header__menu__item" href="#about">DataPrep/EDA</a></li>
-          <li><a class="header__menu__item" href="#skills">Linear Regression model</a>
+          <li><a class="header__menu__item" href="#skills">Linear Regression</a>
             <ul>
               <li><a class="header__menu__item" href="#Overview">Overview</a></li>
               <li><a class="header__menu__item" href="#Data">Data</a></li>
@@ -114,6 +114,25 @@
               <li><a class="header__menu__item" href="#SVM_code">Code</a></li>
               <li><a class="header__menu__item" href="#SVM_results">Results</a></li>
               <li><a class="header__menu__item" href="#SVM_conclusion">Conclusion</a></li>
+            </ul>
+          </li>
+          <!-- <li><a class="header__menu__item" href="#work">Work</a></li> -->
+          <li><a class="header__menu__item" href="#Neural Networks">Neural Networks</a>
+            <ul>
+              <li><a class="header__menu__item" href="#Neural Networks_overview">Overview</a></li>
+              <li><a class="header__menu__item" href="#Neural Networks_data">Data Prep</a></li>
+              <li><a class="header__menu__item" href="#Neural Networks_code">Code</a></li>
+              <li><a class="header__menu__item" href="#Neural Networks_results">Results</a></li>
+              <li><a class="header__menu__item" href="#Neural Networks_conclusion">Conclusion</a></li>
+            </ul>
+          </li>
+          <li><a class="header__menu__item" href="#Regression">Regression</a>
+            <ul>
+              <li><a class="header__menu__item" href="#Regression_overview">Overview</a></li>
+              <li><a class="header__menu__item" href="#Regression_data">Data Prep</a></li>
+              <li><a class="header__menu__item" href="#Regression_code">Code</a></li>
+              <li><a class="header__menu__item" href="#Regression_results">Results</a></li>
+              <li><a class="header__menu__item" href="#Regression_conclusion">Conclusion</a></li>
             </ul>
           </li>
           <!-- <li><a class="header__menu__item" href="#work">Work</a></li> -->
@@ -1368,6 +1387,415 @@
         </div>
       </section>
 
+      <!-- Neural Networks tab -->
+      <section id="Neural Networks" class="section">
+        <h2>Neural Networks</h2>
+      
+        <!--Neural Networks_Overview -->
+        <div id="Neural Networks_overview" class="section max-container left-align">
+          <h2>Overview</h2><br>
+          <div class="center">
+            <img src="images/SVM/kernal_function.png" alt="Your Image"><br>
+          </div>
+          <p class="home__description">
+            In the realm of data classification, Support Vector Machines (SVMs) stand out for their proficiency in discerning
+            distinct categories within datasets. Picture a scenario where emails are categorized as either spam or not spam:
+            SVMs
+            aim to draw a clear line, or plane in multidimensional spaces, effectively partitioning these categories. This
+            delineation, known as the decision boundary, ensures that any new data points are correctly classified. SVMs
+            achieve
+            this by optimizing the margin, akin to a street width, between the decision boundary and the nearest data points
+            of each
+            category. A wider margin translates to a more resilient classifier, capable of handling unseen data with fewer
+            errors.
+            However, the challenge arises when datasets defy simple linear separation. Here, SVMs showcase their
+            sophistication
+            through the kernel trick. By projecting data into higher-dimensional spaces, SVMs can uncover linear separations
+            that
+            were previously elusive. Though these separators may appear curved in higher dimensions, they manifest as
+            non-linear
+            decision boundaries in the original space, expanding the applicability of SVMs across a diverse array of
+            classification
+            challenges.
+          </p><br>
+          <p class="home__description">
+            The kernel trick is a fundamental component of Support Vector Machines (SVMs), crucial for tackling intricate,
+            non-linear datasets. Its essence lies in elevating the input data into a higher-dimensional space where linear
+            separation becomes viable. Rather than directly operating within the original input space, SVMs employ a kernel
+            function
+            to compute the dot product between data point pairs, gauging their similarity. Through diverse kernels like
+            linear,
+            polynomial, radial basis function (RBF), or sigmoid, SVMs can covertly project data into a higher-dimensional
+            feature
+            space without explicitly calculating coordinates. This transformation empowers SVMs to discern a linear decision
+            boundary that effectively partitions data points, even if the original data lacked linearity. Essentially, the
+            kernel
+            trick empowers SVMs to apprehend intricate data patterns, resulting in more precise and adaptable classification
+            models.
+            Practically, the kernel function serves as a conduit between the initial input space and a higher-dimensional
+            realm,
+            where intricate data relationships can be captured and leveraged for classification tasks. Such adaptability
+            renders
+            SVMs with kernel techniques highly potent and broadly applicable across various real-world scenarios.
+          </p><br>
+          <p class="home__description">
+            The dot product plays a critical role in the kernel trick, serving as a measure of similarity between pairs of
+            data
+            points in Support Vector Machines (SVMs). This similarity measurement is pivotal for discerning relationships
+            between
+            data points in both the original input space and the higher-dimensional feature space. By computing the dot
+            product
+            between data point pairs, SVMs can accurately assess their proximity and similarity, crucial for constructing
+            decision
+            boundaries in the higher-dimensional space to differentiate between various classes of data points. Additionally,
+            the
+            dot product enables SVMs to implicitly conduct calculations in the higher-dimensional space without explicitly
+            mapping
+            the data into it, facilitated by the kernel function operating directly on the dot products of input data points.
+            Overall, the dot product's role is indispensable in the kernel trick within SVMs, enabling the computation of data
+            point
+            similarities and facilitating the construction of effective decision boundaries for classification tasks.
+          </p><br>
+          <p class="home__description">
+            Visually, the polynomial kernel function introduces polynomial decision boundaries of varying degrees, allowing
+            SVMs to
+            capture non-linear relationships in the data. On the other hand, the RBF kernel function produces smoother
+            decision
+            boundaries, effectively capturing complex patterns in the data space. Both kernel functions offer flexibility and
+            can
+            adapt to different datasets, making them valuable tools in SVMs for handling non-linear classification problems.
+          </p><br>
+          <div class="center">
+            <img src="images/SVM/kernal_example.png" alt="Your Image"><br>
+          </div>
+          <p class="home__description">
+            The provided Python code demonstrates the implementation of a polynomial kernel with parameters r=1 and
+            d=2 for a 2D data point. The function polynomial_kernel calculates the kernel value, representing the similarity
+            measure
+            between two data points, based on their dot product raised to the power of d. In the example usage, a sample data
+            point
+            [3,2] is used to calculate its kernel value, which serves as a similarity measure reflecting its relationship to
+            itself
+            in the higher-dimensional space induced by the polynomial kernel.
+          </p><br>
+      
+      
+        </div>
+      
+        <!--Neural Networks_Data -->
+        <div id="Neural Networks_data" class="section max-container left-align">
+          <h2>Data Preprocessing</h2><br>
+          <div class="center">
+            <img src="images/PCA/dataPCA_before.png" alt="Your Image"><br>
+            <figcaption>Data Frames Before</figcaption>
+          </div>
+          <p class="home__description">
+            The study focused on data from 2017, before the COVID-19 pandemic, particularly in May, a period of increased
+            shared
+            bicycle usage due to favorable weather. The data, initially in Korean, underwent translation and cleanup,
+            including the
+            removal of unnecessary columns. Checks for missing values were conducted, and numerical encoding was applied to
+            the
+            'Docking Station Number' column. Z-score normalization was performed on selected features to handle outliers
+            effectively
+            while maintaining data integrity. This process ensured robust analysis and prepared the dataset for further
+            investigation.
+          </p><br>
+          <div class="center">
+            <img src="images/PCA/dataPCA_after.png" alt="Your Image"><br>
+            <figcaption>Data Frames After Transforming</figcaption>
+          </div>
+      
+          <h2>LINK to the Sample of Data</h2><br>
+          <p class="home__description">This is the <a
+              href="https://data.seoul.go.kr/dataList/OA-15248/F/1/datasetView.do#">link</a> to Seoul Metropolitan
+            Government Shared Bicycle Data Center website.</p>
+          <p class="home__description">This is the <a
+              href="https://github.com/ArchiComputer/ML_Assignment2.github.io/blob/main/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B3%B5%EA%B3%B5%EC%9E%90%EC%A0%84%EA%B1%B0%20%EC%8B%A0%EA%B7%9C%EA%B0%80%EC%9E%85%EC%9E%90%20%EC%A0%95%EB%B3%B4(%EC%9B%94%EB%B3%84)_23.1-6.csv">link</a>
+            to the GitHub where that data is stored.</p>
+      
+      
+        </div>
+      
+      
+        <!--Neural Networks_Code -->
+        <div id="Neural Networks_code" class="section max-container left-align">
+          <h2>Code</h2>
+          <p class="home__description">This is the <a
+              href="https://github.com/ArchiComputer/ML_Assignment2.github.io/blob/main/PCA.ipynb">link</a> to the GitHub
+            where that data is stored.</p>
+        </div>
+      
+        <!--Neural Networks_Results -->
+        <div id="Neural Networks_results" class="section max-container left-align">
+          <h2>Results</h2>
+          <div class="center">
+            <img src="images/PCA/PCA_clustering.png" alt="Your Image"><br>
+          </div>
+          <p class="home__description">
+            PC scores represent the coordinates of each data point within the new coordinate system defined by the principal
+            components. Each data point possesses a score for every principal component retained in the analysis.
+            The blue, red, and orange clusters exhibit significant overlap, with their numerical differences falling within
+            the
+            range of -1 to 1. These clusters are notably dominant, forming tightly clustered groups within the plot. In
+            contrast,
+            the purple and green clusters appear more dispersed, with fewer data points. However, despite their lower numbers,
+            these
+            stops attract considerable user activity, suggesting that they are busy locations. Therefore, it's essential to
+            delve
+            into the factors contributing to their activity despite their lower numerical representation.
+            Scatter plots of data points along PC1 and PC2 are effective tools for identifying patterns, clusters, or trends
+            within
+            the data. These visualizations reveal the potential for clustering, as distinct groupings in the reduced PC space
+            suggest that the data may naturally exhibit clusters. The presence of such discernible groupings provides
+            justification
+            for employing five clusters in the clustering analysis, indicating that the data can be meaningfully segmented
+            into
+            distinct categories based on its inherent structure.
+      
+          </p>
+      
+        </div>
+        <!--Neural Networks_conclusion -->
+        <div id="Neural Networks_conclusion" class="section max-container left-align">
+          <h2>Naïve Bayes Conclusion</h2>
+          <p class="home__description">
+            From the discussion on PC scores, I've gained an understanding that they act as coordinates for data points within
+            the
+            new coordinate system established by the principal components. Moreover, each data point possesses scores for
+            every
+            principal component retained in the analysis, offering valuable insights into how PCA transforms and represents
+            data in
+            a lower-dimensional space.
+      
+            In analyzing clusters on the scatter plot along PC1 and PC2, I've observed that certain clusters, such as the
+            blue, red,
+            and orange clusters, exhibit significant overlap and dominance within the plot. Conversely, clusters like purple
+            and
+            green appear more dispersed, despite attracting considerable user activity. This observation underscores the
+            importance
+            of exploring the factors influencing activity levels in these clusters, despite their lower numerical
+            representation.
+      
+            Additionally, the discussion on biplots has shed light on how relationships within the data can be revealed
+            through
+            graphical representations combining score plots and loading plots. Understanding the interpretation of biplots,
+            including the direction, strength, and influence of variables, enhances comprehension of the relationships between
+            variables and principal components.
+      
+            Overall, it appears that we can enhance the analysis of each bike stop cluster's characteristics by categorizing
+            them
+            into two main groups, and then further subdividing the groups based on their autonomy from the total usage. This
+            approach could provide deeper insights into the distinct characteristics and usage patterns of different clusters.
+      
+          </p>
+        </div>
+      </section>
+
+      <!-- Regression tab -->
+      <section id="Regression" class="section">
+        <h2>SVM</h2>
+      
+        <!--Regression_Overview -->
+        <div id="Regression_overview" class="section max-container left-align">
+          <h2>Overview</h2><br>
+          <div class="center">
+            <img src="images/SVM/kernal_function.png" alt="Your Image"><br>
+          </div>
+          <p class="home__description">
+            In the realm of data classification, Support Vector Machines (SVMs) stand out for their proficiency in discerning
+            distinct categories within datasets. Picture a scenario where emails are categorized as either spam or not spam:
+            SVMs
+            aim to draw a clear line, or plane in multidimensional spaces, effectively partitioning these categories. This
+            delineation, known as the decision boundary, ensures that any new data points are correctly classified. SVMs
+            achieve
+            this by optimizing the margin, akin to a street width, between the decision boundary and the nearest data points
+            of each
+            category. A wider margin translates to a more resilient classifier, capable of handling unseen data with fewer
+            errors.
+            However, the challenge arises when datasets defy simple linear separation. Here, SVMs showcase their
+            sophistication
+            through the kernel trick. By projecting data into higher-dimensional spaces, SVMs can uncover linear separations
+            that
+            were previously elusive. Though these separators may appear curved in higher dimensions, they manifest as
+            non-linear
+            decision boundaries in the original space, expanding the applicability of SVMs across a diverse array of
+            classification
+            challenges.
+          </p><br>
+          <p class="home__description">
+            The kernel trick is a fundamental component of Support Vector Machines (SVMs), crucial for tackling intricate,
+            non-linear datasets. Its essence lies in elevating the input data into a higher-dimensional space where linear
+            separation becomes viable. Rather than directly operating within the original input space, SVMs employ a kernel
+            function
+            to compute the dot product between data point pairs, gauging their similarity. Through diverse kernels like
+            linear,
+            polynomial, radial basis function (RBF), or sigmoid, SVMs can covertly project data into a higher-dimensional
+            feature
+            space without explicitly calculating coordinates. This transformation empowers SVMs to discern a linear decision
+            boundary that effectively partitions data points, even if the original data lacked linearity. Essentially, the
+            kernel
+            trick empowers SVMs to apprehend intricate data patterns, resulting in more precise and adaptable classification
+            models.
+            Practically, the kernel function serves as a conduit between the initial input space and a higher-dimensional
+            realm,
+            where intricate data relationships can be captured and leveraged for classification tasks. Such adaptability
+            renders
+            SVMs with kernel techniques highly potent and broadly applicable across various real-world scenarios.
+          </p><br>
+          <p class="home__description">
+            The dot product plays a critical role in the kernel trick, serving as a measure of similarity between pairs of
+            data
+            points in Support Vector Machines (SVMs). This similarity measurement is pivotal for discerning relationships
+            between
+            data points in both the original input space and the higher-dimensional feature space. By computing the dot
+            product
+            between data point pairs, SVMs can accurately assess their proximity and similarity, crucial for constructing
+            decision
+            boundaries in the higher-dimensional space to differentiate between various classes of data points. Additionally,
+            the
+            dot product enables SVMs to implicitly conduct calculations in the higher-dimensional space without explicitly
+            mapping
+            the data into it, facilitated by the kernel function operating directly on the dot products of input data points.
+            Overall, the dot product's role is indispensable in the kernel trick within SVMs, enabling the computation of data
+            point
+            similarities and facilitating the construction of effective decision boundaries for classification tasks.
+          </p><br>
+          <p class="home__description">
+            Visually, the polynomial kernel function introduces polynomial decision boundaries of varying degrees, allowing
+            SVMs to
+            capture non-linear relationships in the data. On the other hand, the RBF kernel function produces smoother
+            decision
+            boundaries, effectively capturing complex patterns in the data space. Both kernel functions offer flexibility and
+            can
+            adapt to different datasets, making them valuable tools in SVMs for handling non-linear classification problems.
+          </p><br>
+          <div class="center">
+            <img src="images/SVM/kernal_example.png" alt="Your Image"><br>
+          </div>
+          <p class="home__description">
+            The provided Python code demonstrates the implementation of a polynomial kernel with parameters r=1 and
+            d=2 for a 2D data point. The function polynomial_kernel calculates the kernel value, representing the similarity
+            measure
+            between two data points, based on their dot product raised to the power of d. In the example usage, a sample data
+            point
+            [3,2] is used to calculate its kernel value, which serves as a similarity measure reflecting its relationship to
+            itself
+            in the higher-dimensional space induced by the polynomial kernel.
+          </p><br>
+      
+      
+        </div>
+      
+        <!--Regression_Data -->
+        <div id="Regression_data" class="section max-container left-align">
+          <h2>Data Preprocessing</h2><br>
+          <div class="center">
+            <img src="images/PCA/dataPCA_before.png" alt="Your Image"><br>
+            <figcaption>Data Frames Before</figcaption>
+          </div>
+          <p class="home__description">
+            The study focused on data from 2017, before the COVID-19 pandemic, particularly in May, a period of increased
+            shared
+            bicycle usage due to favorable weather. The data, initially in Korean, underwent translation and cleanup,
+            including the
+            removal of unnecessary columns. Checks for missing values were conducted, and numerical encoding was applied to
+            the
+            'Docking Station Number' column. Z-score normalization was performed on selected features to handle outliers
+            effectively
+            while maintaining data integrity. This process ensured robust analysis and prepared the dataset for further
+            investigation.
+          </p><br>
+          <div class="center">
+            <img src="images/PCA/dataPCA_after.png" alt="Your Image"><br>
+            <figcaption>Data Frames After Transforming</figcaption>
+          </div>
+      
+          <h2>LINK to the Sample of Data</h2><br>
+          <p class="home__description">This is the <a
+              href="https://data.seoul.go.kr/dataList/OA-15248/F/1/datasetView.do#">link</a> to Seoul Metropolitan
+            Government Shared Bicycle Data Center website.</p>
+          <p class="home__description">This is the <a
+              href="https://github.com/ArchiComputer/ML_Assignment2.github.io/blob/main/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B3%B5%EA%B3%B5%EC%9E%90%EC%A0%84%EA%B1%B0%20%EC%8B%A0%EA%B7%9C%EA%B0%80%EC%9E%85%EC%9E%90%20%EC%A0%95%EB%B3%B4(%EC%9B%94%EB%B3%84)_23.1-6.csv">link</a>
+            to the GitHub where that data is stored.</p>
+      
+      
+        </div>
+      
+      
+        <!--Regression_Code -->
+        <div id="Regression_code" class="section max-container left-align">
+          <h2>Code</h2>
+          <p class="home__description">This is the <a
+              href="https://github.com/ArchiComputer/ML_Assignment2.github.io/blob/main/PCA.ipynb">link</a> to the GitHub
+            where that data is stored.</p>
+        </div>
+      
+        <!--Regression_Results -->
+        <div id="Regression_results" class="section max-container left-align">
+          <h2>Results</h2>
+          <div class="center">
+            <img src="images/PCA/PCA_clustering.png" alt="Your Image"><br>
+          </div>
+          <p class="home__description">
+            PC scores represent the coordinates of each data point within the new coordinate system defined by the principal
+            components. Each data point possesses a score for every principal component retained in the analysis.
+            The blue, red, and orange clusters exhibit significant overlap, with their numerical differences falling within
+            the
+            range of -1 to 1. These clusters are notably dominant, forming tightly clustered groups within the plot. In
+            contrast,
+            the purple and green clusters appear more dispersed, with fewer data points. However, despite their lower numbers,
+            these
+            stops attract considerable user activity, suggesting that they are busy locations. Therefore, it's essential to
+            delve
+            into the factors contributing to their activity despite their lower numerical representation.
+            Scatter plots of data points along PC1 and PC2 are effective tools for identifying patterns, clusters, or trends
+            within
+            the data. These visualizations reveal the potential for clustering, as distinct groupings in the reduced PC space
+            suggest that the data may naturally exhibit clusters. The presence of such discernible groupings provides
+            justification
+            for employing five clusters in the clustering analysis, indicating that the data can be meaningfully segmented
+            into
+            distinct categories based on its inherent structure.
+      
+          </p>
+      
+        </div>
+        <!--Regression_conclusion -->
+        <div id="Regression_conclusion" class="section max-container left-align">
+          <h2>Naïve Bayes Conclusion</h2>
+          <p class="home__description">
+            From the discussion on PC scores, I've gained an understanding that they act as coordinates for data points within
+            the
+            new coordinate system established by the principal components. Moreover, each data point possesses scores for
+            every
+            principal component retained in the analysis, offering valuable insights into how PCA transforms and represents
+            data in
+            a lower-dimensional space.
+      
+            In analyzing clusters on the scatter plot along PC1 and PC2, I've observed that certain clusters, such as the
+            blue, red,
+            and orange clusters, exhibit significant overlap and dominance within the plot. Conversely, clusters like purple
+            and
+            green appear more dispersed, despite attracting considerable user activity. This observation underscores the
+            importance
+            of exploring the factors influencing activity levels in these clusters, despite their lower numerical
+            representation.
+      
+            Additionally, the discussion on biplots has shed light on how relationships within the data can be revealed
+            through
+            graphical representations combining score plots and loading plots. Understanding the interpretation of biplots,
+            including the direction, strength, and influence of variables, enhances comprehension of the relationships between
+            variables and principal components.
+      
+            Overall, it appears that we can enhance the analysis of each bike stop cluster's characteristics by categorizing
+            them
+            into two main groups, and then further subdividing the groups based on their autonomy from the total usage. This
+            approach could provide deeper insights into the distinct characteristics and usage patterns of different clusters.
+      
+          </p>
+        </div>
+      </section>
 
       <div class="section max-container left-align">
         <h2 class="title">Conclusion</h2>
