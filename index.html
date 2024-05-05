@@ -1550,23 +1550,19 @@
         <div id="Regression_data" class="section max-container left-align">
           <h2>Data Preprocessing</h2><br>
           <div class="center">
-            <img src="images/Regression/Linear Regression.png" alt="Your Image"><br>
+            <img src="images/Regression/data.png" alt="Your Image"><br>
           </div>
           <p class="home__description">
-            Linear regression is a statistical method used to analyze the relationship between a dependent variable and one or more
-            independent variables. For instance, it could help predict house prices based on their square footage. The process
-            involves collecting data on the variables, fitting a line to the data to minimize the differences between observed and
-            predicted values, and then using this line to make predictions. However, linear regression has limitations. It assumes a
-            linear relationship between variables, which might not always be the case. Additionally, it can only directly model one
-            dependent variable at a time, and the residuals, or the differences between actual and predicted values, need to be
-            analyzed to ensure the model's accuracy.
+            The objective is to forecast the usage volume of Ttareungi bikes utilizing the provided weather data. The weather data
+            will serve as the independent variables (X), while the number of rentals for Ttareungi bikes will be the dependent
+            variable (y).
           </p><br>
       
           <h2>LINK to the Sample of Data</h2><br>
           <p class="home__description">This is the <a
-              href="">link</a>
-            to the GitHub where that data is stored.</p>
-        </div>
+              href="https://github.com/ArchiComputer/ML_Assignment5.github.io/blob/main/SeoulBikeData.csv">link</a> 
+             Shared Bicycle data combied with weather date.</p>
+
       
       
         <!--Regression_Code -->
@@ -1581,64 +1577,27 @@
         <div id="Regression_results" class="section max-container left-align">
           <h2>Results</h2>
           <div class="center">
-            <img src="images/PCA/PCA_clustering.png" alt="Your Image"><br>
+            <img src="images/Regression/Comparision.png" alt="Your Image"><br>
           </div>
           <p class="home__description">
-            PC scores represent the coordinates of each data point within the new coordinate system defined by the principal
-            components. Each data point possesses a score for every principal component retained in the analysis.
-            The blue, red, and orange clusters exhibit significant overlap, with their numerical differences falling within
-            the
-            range of -1 to 1. These clusters are notably dominant, forming tightly clustered groups within the plot. In
-            contrast,
-            the purple and green clusters appear more dispersed, with fewer data points. However, despite their lower numbers,
-            these
-            stops attract considerable user activity, suggesting that they are busy locations. Therefore, it's essential to
-            delve
-            into the factors contributing to their activity despite their lower numerical representation.
-            Scatter plots of data points along PC1 and PC2 are effective tools for identifying patterns, clusters, or trends
-            within
-            the data. These visualizations reveal the potential for clustering, as distinct groupings in the reduced PC space
-            suggest that the data may naturally exhibit clusters. The presence of such discernible groupings provides
-            justification
-            for employing five clusters in the clustering analysis, indicating that the data can be meaningfully segmented
-            into
-            distinct categories based on its inherent structure.
-      
+            When comparing the predicted linear regression data with the actual results, several issues emerged. Initially, there
+            was a situation where the predicted bicycle capacity dropped below zero. Furthermore, the predicted capacity exhibited
+            significantly more fluctuations compared to the actual capacity.
           </p>
       
         </div>
         <!--Regression_conclusion -->
-        <div id="Regression_conclusion" class="section max-container left-align">
-          <h2>Naïve Bayes Conclusion</h2>
+          <h2>Conclusion</h2>
           <p class="home__description">
-            From the discussion on PC scores, I've gained an understanding that they act as coordinates for data points within
-            the
-            new coordinate system established by the principal components. Moreover, each data point possesses scores for
-            every
-            principal component retained in the analysis, offering valuable insights into how PCA transforms and represents
-            data in
-            a lower-dimensional space.
-      
-            In analyzing clusters on the scatter plot along PC1 and PC2, I've observed that certain clusters, such as the
-            blue, red,
-            and orange clusters, exhibit significant overlap and dominance within the plot. Conversely, clusters like purple
-            and
-            green appear more dispersed, despite attracting considerable user activity. This observation underscores the
-            importance
-            of exploring the factors influencing activity levels in these clusters, despite their lower numerical
-            representation.
-      
-            Additionally, the discussion on biplots has shed light on how relationships within the data can be revealed
-            through
-            graphical representations combining score plots and loading plots. Understanding the interpretation of biplots,
-            including the direction, strength, and influence of variables, enhances comprehension of the relationships between
-            variables and principal components.
-      
-            Overall, it appears that we can enhance the analysis of each bike stop cluster's characteristics by categorizing
-            them
-            into two main groups, and then further subdividing the groups based on their autonomy from the total usage. This
-            approach could provide deeper insights into the distinct characteristics and usage patterns of different clusters.
-      
+            The disparity between the linear regression prediction results and the actual values could be attributed to several
+            factors. One key aspect is the assumption of linearity in the relationship between the independent variables and the
+            dependent variable. If the true relationship is nonlinear, linear regression may not capture the complexity of the data
+            accurately. Additionally, linear regression assumes that the error terms are normally distributed with constant
+            variance, which may not always hold true in real-world scenarios. Moreover, the presence of outliers or influential data
+            points can significantly impact the model's performance. Furthermore, the model's features might not fully capture all
+            the relevant factors influencing the dependent variable, leading to discrepancies between the predicted and actual
+            values. Finally, it's essential to ensure that the model is trained on a representative and diverse dataset to improve
+            its generalization performance.
           </p>
         </div>
       </section>
