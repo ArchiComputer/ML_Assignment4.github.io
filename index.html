@@ -1421,38 +1421,25 @@
         <div id="Neural Networks_data" class="section max-container left-align">
           <h2>Data Preprocessing</h2><br>
           <div class="center">
-            <img src="images/PCA/dataPCA_before.png" alt="Your Image"><br>
-            <figcaption>Data Frames Before</figcaption>
+            <img src="images/Neural Network/train_code.png" alt="Your Image"><br>
           </div>
           <p class="home__description">
-            The study focused on data from 2017, before the COVID-19 pandemic, particularly in May, a period of increased
-            shared
-            bicycle usage due to favorable weather. The data, initially in Korean, underwent translation and cleanup,
-            including the
-            removal of unnecessary columns. Checks for missing values were conducted, and numerical encoding was applied to
-            the
-            'Docking Station Number' column. Z-score normalization was performed on selected features to handle outliers
-            effectively
-            while maintaining data integrity. This process ensured robust analysis and prepared the dataset for further
-            investigation.
+            ncludes various features like date, hour, temperature, humidity, etc., along with the target variable 'Rented Bike
+            Count' that we aim to predict. The data was preprocessed by encoding categorical variables, normalizing numerical.
+            'X' contains all the features except the target variable ('Rented Bike Count').
+            'y' contains only the target variable ('Rented Bike Count').
+            train_test_split function is then used to split X and y into training and testing sets, with a test size of 0.2 (meaning
+            20% of the data will be used for testing) and setting random_state for reproducibility.
+
           </p><br>
-          <div class="center">
-            <img src="images/PCA/dataPCA_after.png" alt="Your Image"><br>
-            <figcaption>Data Frames After Transforming</figcaption>
-          </div>
       
           <h2>LINK to the Sample of Data</h2><br>
           <p class="home__description">This is the <a
-              href="https://data.seoul.go.kr/dataList/OA-15248/F/1/datasetView.do#">link</a> to Seoul Metropolitan
-            Government Shared Bicycle Data Center website.</p>
-          <p class="home__description">This is the <a
-              href="https://github.com/ArchiComputer/ML_Assignment2.github.io/blob/main/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B3%B5%EA%B3%B5%EC%9E%90%EC%A0%84%EA%B1%B0%20%EC%8B%A0%EA%B7%9C%EA%B0%80%EC%9E%85%EC%9E%90%20%EC%A0%95%EB%B3%B4(%EC%9B%94%EB%B3%84)_23.1-6.csv">link</a>
+              href="">link</a>
             to the GitHub where that data is stored.</p>
       
       
         </div>
-      
-      
         <!--Neural Networks_Code -->
         <div id="Neural Networks_code" class="section max-container left-align">
           <h2>Code</h2>
@@ -1465,34 +1452,25 @@
         <div id="Neural Networks_results" class="section max-container left-align">
           <h2>Results</h2>
           <div class="center">
-            <img src="images/PCA/PCA_clustering.png" alt="Your Image"><br>
+            <img src="images/Neural Network/Epoch.png" alt="Your Image"><br>
           </div>
           <p class="home__description">
-            PC scores represent the coordinates of each data point within the new coordinate system defined by the principal
-            components. Each data point possesses a score for every principal component retained in the analysis.
-            The blue, red, and orange clusters exhibit significant overlap, with their numerical differences falling within
-            the
-            range of -1 to 1. These clusters are notably dominant, forming tightly clustered groups within the plot. In
-            contrast,
-            the purple and green clusters appear more dispersed, with fewer data points. However, despite their lower numbers,
-            these
-            stops attract considerable user activity, suggesting that they are busy locations. Therefore, it's essential to
-            delve
-            into the factors contributing to their activity despite their lower numerical representation.
-            Scatter plots of data points along PC1 and PC2 are effective tools for identifying patterns, clusters, or trends
-            within
-            the data. These visualizations reveal the potential for clustering, as distinct groupings in the reduced PC space
-            suggest that the data may naturally exhibit clusters. The presence of such discernible groupings provides
-            justification
-            for employing five clusters in the clustering analysis, indicating that the data can be meaningfully segmented
-            into
-            distinct categories based on its inherent structure.
+            During the training process, the model undergoes multiple epochs, each marked by a progressive reduction in loss as it
+            strives to minimize the discrepancy between predicted and actual values. This reduction is evident in both the training
+            and validation sets, indicating the model's gradual improvement in learning. Notably, the epochs proceed swiftly,
+            reflecting the efficiency of the training process. Post-training evaluation on a distinct test set reveals a test loss
+            of 95.4896, complemented by Mean Squared Error (MSE) and Root Mean Squared Error (RMSE) metrics, reinforcing the model's
+            efficacy. Overall, these outcomes signify the model's adeptness in capturing patterns from the training data and
+            generalizing well to unseen instances, underscoring its reliability in practical applications.
           </p>
       
         </div>
         <!--Neural Networks_conclusion -->
         <div id="Neural Networks_conclusion" class="section max-container left-align">
           <h2>Naïve Bayes Conclusion</h2>
+            <div class="center">
+              <img src="images/Neural Network/Validation.png" alt="Your Image"><br>
+            </div>
           <p class="home__description">
             From the discussion on PC scores, I've gained an understanding that they act as coordinates for data points within
             the
